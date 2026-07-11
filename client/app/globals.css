@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Intentionally NOT following prefers-color-scheme here. This app's design
+   uses white cards on a light background consistently; auto-switching to
+   dark mode based on the OS setting caused unstyled text (headings, labels)
+   to inherit a near-white color while card backgrounds stayed white,
+   making that text invisible. Forcing a single light theme avoids that
+   whole class of bug until a real dark mode is designed intentionally. */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
